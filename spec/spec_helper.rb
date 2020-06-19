@@ -2,6 +2,8 @@ ENV["PLAYLISTER_ENV"] = "test"
 
 require_relative '../config/environment'
 
+ActiveRecord::Base.logger = nil
+
 RSpec.configure do |config|
   config.order = 'default'
 
@@ -20,3 +22,7 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 end
+
+# def reset_database
+#   `rake db:migrate`
+# end
